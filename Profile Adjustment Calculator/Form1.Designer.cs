@@ -274,7 +274,7 @@
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.NudStandard);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Deviation calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NudStandard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudMin)).EndInit();

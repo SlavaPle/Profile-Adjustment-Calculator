@@ -138,11 +138,14 @@ namespace Profile_Adjustment_Calculator
                     new Point(W + (Min + Value) * k, H),
                     new Point(W + (Min + Value + TiltValue) * k, zero) };
                 g.FillPolygon(Brushes.LightSteelBlue, P);
-                p = new Pen(Color.Gray, 12);
-                g.DrawLine(p, W + 5, H, W + Deviation * k + 5, zero);
-                g.DrawLine(p, W + 5, H, (W - Adj * k) + 5, H);
-                g.DrawLine(p, W - Adj * k + 5, H, W + (Deviation - Adj) * k + 5, zero);
-                g.DrawLine(p, W + (Deviation - Adj) * k + 5, zero, W + Deviation * k + 5, zero);
+                Color brushColor = Color.FromArgb(125, 125, 125, 125);
+                SolidBrush brush = new SolidBrush(brushColor);
+
+                P = new Point[] { new Point( W + 5, H),
+                    new Point(W + Deviation * k + 5, zero),
+                    new Point(W + (Deviation - Adj) * k + 5, zero),
+                    new Point((W - Adj * k) + 5, H) };
+                g.FillPolygon(brush, P);
                 g.DrawString(((Reverse ? -1 : 1) * TiltValue).ToString(), f, Brushes.Black, W + (Min + Value + TiltValue) * k - 50, 70);
                 if (Tilt) g.DrawLine(new Pen(Color.Red, 5), W + (Min + Value) * k, H, W + (Min + Value + TiltValue) * k, zero);
             }
